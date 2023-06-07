@@ -1,0 +1,11 @@
+.link {
+    text-decoration: none;
+    color: var(--black-color)
+}
+
+.btn-orange {
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    padding: 12px;
+    border-radius: 12px;
+}

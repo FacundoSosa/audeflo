@@ -1,0 +1,7 @@
+.navbar-ul {
+    display: flex;
+}
+
+.navbar-link {
+    padding: 0% 20px;
+}
