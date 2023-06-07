@@ -10,5 +10,4 @@
 @import "./styles/components/buttons.css";
 
 /* LAYOUT */
-@import "./styles/layout/header.css";
-@import "./styles/layout/navigation.css";
+@import "./styles/layout/navbar.css";

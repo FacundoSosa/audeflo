@@ -8,4 +8,5 @@
     color: var(--white-color);
     padding: 12px;
     border-radius: 12px;
+    word-wrap: break-word;
 }
