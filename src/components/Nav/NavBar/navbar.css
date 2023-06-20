@@ -1,3 +1,19 @@
+.navbar__container {
+    display: block;
+    background-color: aqua;
+    position: fixed;
+    height: 100vh;
+    width: 50vw;
+    top: 0%;
+    right: 0%;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+}
+
+.is-active {
+    transform: translateX(0%);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -6,10 +22,6 @@
     padding: 16px;
 }
 
-.navbar__container {
-    display: none;
-    flex-basis: 100%
-}
 
 .navbar__ul {
     display: flex;
@@ -25,14 +37,31 @@
     display: block;
 }
 
-.is-active {
-    display: block;
+.home {
+    height: 200vh;
+    background-color: bisque;
 }
 
 @media screen and (min-width: 1024px) {
+    header {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
+
+    .header-style {
+        animation: scroll-animation .3s ease-in-out;
+    }
+
     .navbar__container {
         display: block;
         flex-basis: auto;
+        transform: none;
+        transition: none;
+        background-color: initial;
+        position: static;
+        height: auto;
+        width: auto;
     }
 
     .navbar__ul {
@@ -46,4 +75,9 @@
     .navbar-toggler {
         display: none;
     }
+}
+
+@keyframes scroll-animation {
+    0% {height: 0px;}
+    100% {height: 64px;}
 }
