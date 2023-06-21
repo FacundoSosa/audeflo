@@ -1,17 +1,7 @@
-.navbar__container {
-    display: block;
-    background-color: aqua;
+.header {
     position: fixed;
-    height: 100vh;
-    width: 50vw;
-    top: 0%;
-    right: 0%;
-    transform: translateX(100%);
-    transition: transform .3s ease-in-out;
-}
-
-.is-active {
-    transform: translateX(0%);
+    top: 0px;
+    width: 100%;
 }
 
 .navbar {
@@ -19,22 +9,62 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 16px;
+    padding: 24px 16px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 
+.navbar__container {
+    display: block;
+    background-color: var(--white-color);
+    padding: 24px 16px;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0%;
+    right: 0%;
+    transform: translateX(100%);
+    transition: transform .5s cubic-bezier(0.75, 0, 0, 1);
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar::before {
+    content: "";
+    background-color: var(--white-color);
+    width: 100%;
+    height: 100%;
+    transition: transform .5s cubic-bezier(0.75, 0, 0.125, 1);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.scrolling::before {
+    transform: scaleY(1);
+}
+
+.is-active {
+    transform: translateX(0%);
+}
 
 .navbar__ul {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 20px;
 }
 
 .navbar__item {
-    margin: 8px 0px;
+    display: flex;
 }
 
 .navbar-toggler {
-    display: block;
+    display: inline;
 }
 
 .home {
@@ -42,30 +72,30 @@
     background-color: bisque;
 }
 
+@media screen and (min-width: 375px) {
+    .navbar__container {
+        width: 60vw;
+    }
+}
+
 @media screen and (min-width: 1024px) {
-    header {
-        position: fixed;
-        top: 0px;
-        width: 100%;
-    }
-
-    .header-style {
-        animation: scroll-animation .3s ease-in-out;
-    }
-
     .navbar__container {
         display: block;
         flex-basis: auto;
         transform: none;
         transition: none;
         background-color: initial;
+        box-shadow: none;
         position: static;
         height: auto;
         width: auto;
+        padding: 0%;
     }
 
     .navbar__ul {
         flex-direction: row;
+        align-items: center;
+        gap: 8px;
     }
     
     .navbar__item {
@@ -77,7 +107,3 @@
     }
 }
 
-@keyframes scroll-animation {
-    0% {height: 0px;}
-    100% {height: 64px;}
-}

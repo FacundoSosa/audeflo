@@ -8,6 +8,7 @@
 
 /* COMPONENTS */
 @import "./styles/components/buttons.css";
+@import "./styles/components/backdrop-filter.css";
 
 /* LAYOUT */
 @import "./styles/layout/navbar.css";

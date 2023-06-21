@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import NavList from '../NavList'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
@@ -6,9 +6,9 @@ import "./navbar.css"
 
 function NavBar() {
   const [active, setActive] = useState(false)
+  const [scrolling, setScrolling] = useState(false)
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth)
-  const [headerStyle, setHeaderStyle] = useState("")
-  const headerRef = useRef()
+  const [windowPositionY, setWindowPositionY] = useState(window.scrollY)
 
   const handleToggler = () => {
     setActive(!active)
@@ -20,17 +20,19 @@ function NavBar() {
       setActive(false)
     }
   }, [windowInnerWidth])
-  
- /*  const handleScroll = () => {
-    console.log("scroll");
-  }
 
-  window.addEventListener("scroll", handleScroll) */
-  
+  useEffect(() => {  
+    window.addEventListener("scroll", () => setWindowPositionY(window.scrollY))
+    if (windowPositionY > 36) {
+      setScrolling(true)
+    } else {
+      setScrolling(false)
+    }
+  }, [windowPositionY])
  
   return (
-    <header className={headerStyle} >
-      <nav className='navbar' ref={headerRef}>
+    <header className='header'>
+      <nav className={classNames("navbar", {"scrolling": scrolling})}>
         <Link className='link title--sm' to="/"><h1>AUDEFLO</h1></Link>
         <button onClick={handleToggler} className='navbar-toggler'>=</button>
         <div id='navbar-container' className={classNames("navbar__container", {"is-active": active && windowInnerWidth <= 1024})}>
@@ -51,6 +53,7 @@ function NavBar() {
               itemClassNames="navbar__item"
             />
         </div>
+        {active && <div className='backdrop-filter'></div>}
       </nav>
     </header>
   )
