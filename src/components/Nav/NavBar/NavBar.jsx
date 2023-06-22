@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import NavList from '../NavList'
 import { Link } from 'react-router-dom'
+import NavList from '../NavList'
 import classNames from 'classnames'
 import "./navbar.css"
+import menuIcon from "../../../assets/icons/menu.svg"
+import closeIcon from "../../../assets/icons/close.svg"
 
 function NavBar() {
   const [active, setActive] = useState(false)
@@ -34,9 +36,9 @@ function NavBar() {
     <header className='header'>
       <nav className={classNames("navbar", {"scrolling": scrolling})}>
         <Link className='link title--sm' to="/"><h1>AUDEFLO</h1></Link>
-        <button onClick={handleToggler} className='navbar-toggler'>=</button>
+        <button onClick={handleToggler} className='navbar-toggler icon'><img className='icon' src={menuIcon} alt="menu-icon.svg" /></button>
         <div id='navbar-container' className={classNames("navbar__container", {"is-active": active && windowInnerWidth <= 1024})}>
-            <button onClick={handleToggler} className='navbar-toggler'>X</button>
+            <button onClick={handleToggler} className='navbar-toggler'><img src={closeIcon} alt="close-icon.svg"/></button>
             <NavList  
               items={[
                 {name: "Home", route: "/", isButton: false},

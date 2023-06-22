@@ -10,7 +10,7 @@ function NavList({items, listClassNames, itemClassNames}) {
         return(
           <li className={itemClassNames}>
             <Link 
-              className={classNames(item.isButton ? "btn-orange link" : `link`) } 
+              className={classNames(item.isButton ? "btn-orange" : "link") } 
               key={`${index}-${item.name}`} 
               to={item.route}
             >

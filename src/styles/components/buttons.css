@@ -6,8 +6,18 @@
 .btn-orange {
     background-color: var(--orange-color);
     color: var(--white-color);
+    text-decoration: none;
     padding: 12px;
     border-radius: 12px;
     word-wrap: break-word;
     box-shadow: rgba(187, 113, 44, 0.2) 0 -25px 18px -14px inset, rgba(0, 0, 0, 0.12) 4px 4px 24px;
+    transition: opacity .3s ease-in-out;
+}
+
+.btn-orange:hover {
+    opacity: 0.8;
+}
+
+.icon {
+    color: var(--black-color);
 }
