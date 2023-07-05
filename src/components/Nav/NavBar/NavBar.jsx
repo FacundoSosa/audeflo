@@ -41,14 +41,14 @@ function NavBar() {
             <button onClick={handleToggler} className='navbar-toggler'><img src={closeIcon} alt="close-icon.svg"/></button>
             <NavList  
               items={[
-                {name: "Home", route: "/", isButton: false},
-                {name: "Nosotros", route: "/nosotros", isButton: false},
-                {name: "Eventos", route: "/eventos", isButton: false},
-                {name: "Contenido", route: "/contenido", isButton: false},
-                {name: "Servicios", route: "/servicios", isButton: false},
-                {name: "FAQ", route: "/faq", isButton: false},
-                {name: "Contacto", route: "/contacto", isButton: false},
-                {name: "HACETE SOCIO", route: "/socios", isButton: true},
+                {id: 1, name: "Home", route: "/", isButton: false},
+                {id: 2, name: "Nosotros", route: "/nosotros", isButton: false},
+                {id: 3, name: "Eventos", route: "/eventos", isButton: false},
+                {id: 4, name: "Contenido", route: "/contenido", isButton: false},
+                {id: 5, name: "Servicios", route: "/servicios", isButton: false},
+                {id: 6, name: "FAQ", route: "/faq", isButton: false},
+                {id: 7, name: "Contacto", route: "/contacto", isButton: false},
+                {id: 8, name: "HACETE SOCIO", route: "/socios", isButton: true},
               ]}
 
               listClassNames="navbar__ul"

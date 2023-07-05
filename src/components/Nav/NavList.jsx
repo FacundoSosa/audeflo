@@ -6,12 +6,11 @@ function NavList({items, listClassNames, itemClassNames}) {
   
   return (
     <ul className={listClassNames}>
-      {items.map((item, index) => {
+      {items.map((item) => {
         return(
-          <li className={itemClassNames}>
+          <li className={itemClassNames} key={`${item.id}-${item.name}`}>
             <Link 
-              className={classNames(item.isButton ? "btn-orange" : "link") } 
-              key={`${index}-${item.name}`} 
+              className={classNames(item.isButton ? "btn-orange" : "link") }  
               to={item.route}
             >
               {item.name}

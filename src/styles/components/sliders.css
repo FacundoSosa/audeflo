@@ -1,0 +1,22 @@
+.carousel-wrapper {
+    overflow-x: hidden;
+    margin: 40vh 0vw;
+    width: 100%;
+}
+
+.carousel-container {
+    display: flex;
+    /* justify-content: space-evenly; */
+    
+   /*  display: grid;
+    grid-template-columns: repeat(6, max-content); */
+    transform: translateX(0%);
+    transition: transform .4s var(--timing-function);
+    width: 100%;
+
+}
+
+.carousel-img {
+    width: calc(100% / 3);
+    border-radius: 24px;
+}

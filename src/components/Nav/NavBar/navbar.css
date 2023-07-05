@@ -89,11 +89,12 @@
 
 .navbar-toggler {
     display: inline;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 375px) {
     .navbar__container {
-        width: 60vw;
+        width: 70vw;
     }
 }
 
