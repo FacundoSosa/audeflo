@@ -1,22 +1,42 @@
-.carousel-wrapper {
+.carousel__wrapper {
     overflow-x: hidden;
     margin: 40vh 0vw;
     width: 100%;
+    padding-left: 16px;
+    z-index: -1;
+    display: flex;
 }
 
-.carousel-container {
+.carousel__container {
+    position: relative;
     display: flex;
-    /* justify-content: space-evenly; */
-    
-   /*  display: grid;
-    grid-template-columns: repeat(6, max-content); */
+    column-gap: 16px;
     transform: translateX(0%);
     transition: transform .4s var(--timing-function);
     width: 100%;
-
+    z-index: -2;
 }
 
-.carousel-img {
-    width: calc(100% / 3);
+.carousel__img {
+    width: calc(100% / 3 - 16px);
     border-radius: 24px;
+}
+
+.carousel__btn {
+    position: absolute;
+    z-index: 0;
+    top: 53%;
+}
+
+.carousel__btn--prev {
+    left: 0;
+    transform: scaleX(-1)
+}
+
+.carousel__btn--next {
+    right: 0;
+}
+
+.home {
+    height: 200vh;
 }

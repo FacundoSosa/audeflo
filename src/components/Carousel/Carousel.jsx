@@ -1,4 +1,5 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState} from 'react';
+import arrow from "../../assets/icons/arrow.svg"
 
 function Carousel({images}) {
   const container = useRef()
@@ -8,26 +9,21 @@ function Carousel({images}) {
   const handleMovement = (position, counter) => {
     setPosition(position)
     setCounter(counter)
+    container.current.style.transform = `translateX(${position}%)`
+    console.log("dad");
   }
   
-  useEffect(() => {
-    container.current.style.transform = `translateX(${position}%)`
-  }, [position, counter])
-  
-
   return (
-    <div className='carousel-wrapper'>
-      <div className='carousel-container' ref={container}>
+    <div className='carousel__wrapper'>
+      {counter > 0 && <button className='btn-orange carousel__btn carousel__btn--prev' onClick={() => handleMovement(position + 100, counter - 1)}><img src={arrow} alt='arrow.svg'/></button>}
+      <div className='carousel__container' ref={container}>
         {images.map((image) => {
           return (
-            <img className='carousel-img' key={image.id} src={image.img} alt="" />
+            <img className='carousel__img' key={image.id} src={image.img} alt="" />
           )
         })}
       </div>
-      <span>
-        {counter > 0 && <button className='btn-orange' onClick={() => handleMovement(position + 100, counter - 1)}>Prev</button>}
-        {counter < images.length && <button className='btn-orange' onClick={() => handleMovement(position - 100, counter + 1)}>Next</button>}
-      </span>
+      {counter < images.length / 3 - 1 && <button className='btn-orange carousel__btn carousel__btn--next' onClick={() => handleMovement(position - 100, counter + 1)}><img src={arrow} alt='arrow.svg'/></button>}
     </div>
   )
 }

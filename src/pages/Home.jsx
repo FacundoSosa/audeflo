@@ -24,10 +24,9 @@ function Home() {
           {id: 11, img: img6},
           {id: 12, img: img6},
           {id: 13, img: img4},
-          {id: 13, img: img4},
-          {id: 13, img: img4},
-          {id: 13, img: img4},
-          {id: 13, img: img4},
+          {id: 15, img: img4},
+          {id: 24, img: img4},
+          {id: 626, img: img2},
         ]}
       />
     </main>
